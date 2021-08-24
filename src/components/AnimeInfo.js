@@ -7,6 +7,8 @@ const AnimeInfo = props => {
 	return (
 		<div>
 			<h1>Title: {props.anime.results[0].title}</h1>
+			<img src={props.anime.results[0].image_url} />
+			<p>{props.anime.results[0].synopsis}</p>
 		</div>
 	);
 };
