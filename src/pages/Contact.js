@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
 
-export default function Contact(props) {
-	return <div className="ContactPage">This is the {props.page} page</div>;
+export default function Favorites(props) {
+	return <div className="FavoritesPage">This is the {props.page} page</div>;
 }

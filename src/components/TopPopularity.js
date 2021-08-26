@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-const AnimeInfo = props => {
+const TopPopularity = props => {
 	useEffect(() => {
 		console.log('I run when the MovieInfo Component is Mounted');
+		console.log(props.anime.results);
 	}, []);
 	return (
 		<div>
@@ -13,4 +14,4 @@ const AnimeInfo = props => {
 		</div>
 	);
 };
-export default AnimeInfo;
+export default TopPopularity;
