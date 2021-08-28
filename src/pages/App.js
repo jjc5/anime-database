@@ -67,10 +67,21 @@ export default function App(props) {
 				<main className="Page">
 					{Object.keys(anime).length ? <AnimeInfo anime={anime} /> : ''}
 				</main>
-				<ul>
+				<ul className="ulTopAnimes">
 					{topAnimes &&
 						topAnimes.map(topAnime => {
-							return <li key={topAnime.mal_id}>{topAnime.title}</li>;
+							return (
+								<li className="topAnimeList" key={topAnime.mal_id}>
+									<h3 className="topAnimesTitles">{topAnime.title}</h3>
+									<img
+										id="star"
+										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8dm2DONgcXDtMmxqN-qw1ZuyQ1nmBiU1WTw&usqp=CAU"
+									/>
+									{topAnime.score}
+									<br />
+									<img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg?s=59241469eb470604a792add6fbe7cce6" />
+								</li>
+							);
 						})}
 				</ul>
 			</div>

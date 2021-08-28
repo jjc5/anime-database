@@ -26,5 +26,34 @@ body {
 }
 
 .AppPage {
+background-image: url("https://i.imgur.com/6lfyg2f.png") ;
+}
+#star{
+  height: 20px;
+}
+.topAnimeList{
+  font-size: 30px;
+  border: solid white;
+  height: 500px;
+  width: 400px;
+  text-align: center;
+}
+.searchedAnime{
+  font-size: 25px;
+  border: solid white;
+  width: 400px;
+  text-align: center;
+}
+.ulTopAnimes{
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  display: grid;
+  grid-template-columns: 380px 380px 380px 380px 380px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 
+}
+.topAnimesTitles{
+  border: solid blue;
+  height: 39px;
 }
