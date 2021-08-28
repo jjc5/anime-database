@@ -53,17 +53,19 @@ export default function App(props) {
 	return (
 		<div>
 			<div className="AppPage">
-				<h1>Anime Search</h1>
-				<form onSubmit={handleSubmit}>
-					<input
-						id="title"
-						type="text"
-						value={query.title}
-						onChange={handleChange}
-						placeholder="Title"
-					/>
-					<input type="submit" value="Search" />
-				</form>
+				<div className="searchDiv">
+					<h1 id="animeSearch">Anime アニメ</h1>
+					<form id="searchForm" onSubmit={handleSubmit}>
+						<input
+							id="title"
+							type="text"
+							value={query.title}
+							onChange={handleChange}
+							placeholder="Title"
+						/>
+						<input type="submit" value="Search" />
+					</form>
+				</div>
 				<main className="Page">
 					{Object.keys(anime).length ? <AnimeInfo anime={anime} /> : ''}
 				</main>
@@ -79,7 +81,7 @@ export default function App(props) {
 									/>
 									{topAnime.score}
 									<br />
-									<img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg?s=59241469eb470604a792add6fbe7cce6" />
+									<img id="topAnimesImages" src={topAnime.image_url} />
 								</li>
 							);
 						})}

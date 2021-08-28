@@ -26,34 +26,75 @@ body {
 }
 
 .AppPage {
-background-image: url("https://i.imgur.com/6lfyg2f.png") ;
+  background-image: url("https://wallpaperaccess.com/full/4131921.jpg") ;
+  background-attachment: fixed;
+
 }
+
 #star{
   height: 20px;
 }
 .topAnimeList{
+  background: rgba(15, 101, 103, .8);
   font-size: 30px;
-  border: solid white;
+  border: solid black;
+  border-radius: 50px;
   height: 500px;
   width: 400px;
   text-align: center;
 }
 .searchedAnime{
-  font-size: 25px;
-  border: solid white;
-  width: 400px;
+  font-size: 30px;
+  background: rgba(163,42,29, .8);
+  border: solid black;
+  border-radius: 50px;
+  width: 100%;
   text-align: center;
 }
 .ulTopAnimes{
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: white;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: black;
   display: grid;
-  grid-template-columns: 380px 380px 380px 380px 380px;
-  grid-column-gap: 10px;
+  grid-template-columns: 380px 380px 380px 380px;
+  grid-column-gap: 50px;
   grid-row-gap: 10px;
-
+  justify-content: center;
+  margin-top: 100px;
 }
 .topAnimesTitles{
-  border: solid blue;
-  height: 39px;
+  height: 90px;
+}
+#topAnimesImages{
+  height: 315px;
+  width: 225px;
+}
+.searchDiv{
+  width: 550px;
+  font-size: 27px;
+  margin:auto;
+  text-align: center;
+  color: rgb(15, 101, 103);
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+#animeSearch{
+  font-size: 75px;
+  width: 550px;
+  height: 110px;
+  border: solid black;
+  border-radius: 20px;
+  background: rgba(100, 100, 100, .9);
+}
+.synopsis{
+  background: rgba(255, 218, 199, .5);
+  border: solid black;
+  border-radius: 20px;
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+#searchedTitle{
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+#searchForm{
+  margin-top: 20px;
 }
