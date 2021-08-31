@@ -34,11 +34,12 @@ body {
 #star{
   height: 20px;
 }
+
 .topAnimeList{
   background: rgba(15, 101, 103, .8);
   font-size: 30px;
   border: solid black;
-  border-radius: 50px;
+  border-radius: 30px;
   height: 500px;
   width: 400px;
   text-align: center;
@@ -47,7 +48,7 @@ body {
   font-size: 30px;
   background: rgba(163,42,29, .8);
   border: solid black;
-  border-radius: 50px;
+  border-radius: 30px;
   width: 100%;
   text-align: center;
 }
@@ -65,6 +66,7 @@ body {
   height: 90px;
 }
 #topAnimesImages{
+  border: solid white;
   height: 315px;
   width: 225px;
 }
@@ -97,4 +99,40 @@ body {
 }
 #searchForm{
   margin-top: 20px;
+}
+#searchedScore{
+  color: white;
+  font-size: 20px;
+}
+.deleteBtn{
+  height: 62px;
+  width: 75px;
+  border-radius: 20px;
+  background: rgba(163,42,29, .8);
+  float: right;
+}
+#favoriteForm{
+  width: 550px;
+  margin: auto;
+  margin-bottom: 40px;
+  text-align: center;
+}
+#favesLi{
+  display: grid;
+  grid-template-columns: 400px 400px;
+  border: solid black;
+  margin-bottom: 20px;
+  background: rgba(214,203,186,.9);
+  border-radius: 20px;
+}
+#favesUl{
+  text-align: center;
+  width: 600px;
+  margin:auto;
+  text-align: center;
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+#trashcan{
+  height: 62px;
 }

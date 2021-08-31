@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AnimeInfo from '../components/AnimeInfo.js';
-import TopPopularity from '../components/TopPopularity.js';
+import Create from '../components/Create.js';
 export default function App(props) {
 	const [query, updateQuery] = useState({
 		baseURL: 'https://api.jikan.moe/v3',
@@ -40,6 +40,19 @@ export default function App(props) {
 		})();
 	}, []);
 
+	const [animes, setAnimes] = useState([]);
+	useEffect(() => {
+		(async () => {
+			try {
+				const response = await fetch('/api/animes');
+				const data = await response.json();
+				setAnimes(data);
+			} catch (error) {
+				console.error(error);
+			}
+		})();
+	}, [animes]);
+
 	const handleChange = event => {
 		updateQuery({ ...query, ...{ [event.target.id]: event.target.value } });
 	};
@@ -49,6 +62,20 @@ export default function App(props) {
 			...query,
 			searchURL: query.baseURL + '/search/anime' + query.option + query.title
 		});
+	};
+
+	const handleDelete = async animeId => {
+		try {
+			const response = await fetch(`/api/animes/${animeId}`, {
+				method: 'DELETE',
+				header: {
+					'Content-Type': 'application/json'
+				}
+			});
+			const deletedAnime = await response.json();
+		} catch (error) {
+			console.error(error);
+		}
 	};
 	return (
 		<div>
@@ -69,6 +96,27 @@ export default function App(props) {
 				<main className="Page">
 					{Object.keys(anime).length ? <AnimeInfo anime={anime} /> : ''}
 				</main>
+				<Create animes={animes} setAnimes={setAnimes} />
+				<ul id="favesUl">
+					{animes.map(animes => {
+						return (
+							<li id="favesLi" key={animes._id}>
+								<h1 id="favoriteTitle">{animes.title}</h1>
+								<button
+									className="deleteBtn"
+									onClick={() => {
+										handleDelete(animes._id);
+									}}
+								>
+									<img
+										id="trashcan"
+										src="https://cdn.iconscout.com/icon/premium/png-512-thumb/trash-can-1778449-1515973.png"
+									></img>
+								</button>
+							</li>
+						);
+					})}
+				</ul>
 				<ul className="ulTopAnimes">
 					{topAnimes &&
 						topAnimes.map(topAnime => {
@@ -77,7 +125,7 @@ export default function App(props) {
 									<h3 className="topAnimesTitles">{topAnime.title}</h3>
 									<img
 										id="star"
-										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8dm2DONgcXDtMmxqN-qw1ZuyQ1nmBiU1WTw&usqp=CAU"
+										src="https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png"
 									/>
 									{topAnime.score}
 									<br />
