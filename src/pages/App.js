@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AnimeInfo from '../components/AnimeInfo.js';
 import Create from '../components/Create.js';
 import Register from '../pages/Register';
+import SignIn from '../components/SignIn';
 export default function App(props) {
 	const [query, updateQuery] = useState({
 		baseURL: 'https://api.jikan.moe/v3',
@@ -80,6 +81,7 @@ export default function App(props) {
 	};
 	return (
 		<div>
+			<SignIn />
 			<div className="AppPage">
 				<div className="searchDiv">
 					<h1 id="animeSearch">Anime アニメ</h1>
