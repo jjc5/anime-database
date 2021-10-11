@@ -4,7 +4,8 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 const mongoose = require('mongoose');
 const path = require('path');
-const animeController = require('./controllers/animes.js');
+// const animeController = require('./controllers/animes.js');
+const userController = require('./controllers/users.js');
 
 const MONGODB_URI = process.env.MONGODB_URI
 const db = mongoose.connection;
@@ -12,6 +13,7 @@ const db = mongoose.connection;
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true
 });
 db.on('open', () => {
     console.log('Mongo is Connected');
@@ -22,8 +24,9 @@ if (process.env.NODE_ENV !== 'development'){
   app.use(express.static('public'))
 }
 
-/* Controller Goes Here Remove the tes*/
-app.use('/api/animes', animeController)
+
+// app.use('/api/animes', animeController)
+app.use('/api/users', userController)
 /* Controller Ends here */
 //LISTENER
 
