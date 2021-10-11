@@ -78,6 +78,73 @@ const RegisterInfo = props => {
 		<>
 			<div className="container">
 				<h3 className="row justify-content-center">Register your account</h3>
+				<form
+					onSubmit={handleSubmit}
+					className="row justify-content-center"
+					id="registerForm"
+					style={bgStyle1}
+				>
+					<div className="col-md-auto">
+						<div className="p-1">
+							<i className="fa fa-wpforms icon"></i>
+							<input
+								className="input-field"
+								id="name"
+								type="text"
+								placeholder="Username"
+								value={personal.name}
+								onChange={handleChangePersonal}
+								required
+							/>
+						</div>
+						<div className="p-1">
+							<i className="fa fa-wpforms icon"></i>
+							<input
+								className="input-field"
+								id="email"
+								type="text"
+								placeholder="Email"
+								value={personal.email}
+								onChange={handleChangePersonal}
+								required
+							/>
+						</div>
+						<div className="p-1">
+							<i className="fa fa-wpforms icon"></i>
+							<input
+								className="input-field"
+								id="password"
+								type="password"
+								placeholder="Password"
+								value={personal.password}
+								onChange={handleChangePersonal}
+								required
+							/>
+						</div>
+						<div className="p-1">
+							<i className="fa fa-wpforms icon"></i>
+							<input
+								className="input-field"
+								id="cpassword"
+								type="password"
+								placeholder="Confirm Password"
+								value={confirmPassword.cpassword}
+								onChange={handleChangeConfirmPassword}
+								required
+							/>
+						</div>
+					</div>
+				</form>
+				<div className="row justify-content-center" style={bgStyle}>
+					<button
+						type="submit"
+						className="p-2 m-3 btn-lg btn btn-light"
+						value="SUBMIT"
+						form="registerForm"
+					>
+						SUBMIT
+					</button>
+				</div>
 			</div>
 		</>
 	);
