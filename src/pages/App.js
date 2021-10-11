@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AnimeInfo from '../components/AnimeInfo.js';
 import Create from '../components/Create.js';
+import Register from '../pages/Register';
 export default function App(props) {
 	const [query, updateQuery] = useState({
 		baseURL: 'https://api.jikan.moe/v3',
