@@ -11,7 +11,7 @@ const auth = require('../middleware/auth.js');
  * @desc    Authenticate user
  * @access  public
  */
-router.post('/', (req, res) => {
+router.post('/login', (req, res) => {
  const {name, email, password} = req.body;
 
  //simple validation

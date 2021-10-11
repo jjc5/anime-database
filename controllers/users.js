@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
  * @desc    Get all users
  * @access  Private
  */
-router.post('/', (req, res) => {
+router.post('/register', (req, res) => {
  const {name, email, password} = req.body;
 
  //simple validation
