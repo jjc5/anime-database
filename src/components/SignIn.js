@@ -55,6 +55,59 @@ const SignIn = props => {
 						<h2 className="text-center col-md-5 reg-card-title">
 							Sign in to your account
 						</h2>
+
+						<div className="container">
+							<div className="row  p-2 justify-content-center">
+								<div className="col-md-auto">
+									<i className="fa fa-user icon"></i>
+									<input
+										className="p-1  input-field"
+										id="email"
+										type="text"
+										placeholder="User Email"
+										name="email"
+										value={signin.email}
+										onChange={handleChange}
+										required
+									/>
+								</div>
+							</div>
+
+							<div className="row  p-2 justify-content-center">
+								<div className="col-md-auto">
+									<i className="fa fa-key icon"></i>
+
+									<input
+										className="p-1 input-field"
+										id="password"
+										type="password"
+										placeholder="Password"
+										name="password"
+										value={signin.password}
+										onChange={handleChange}
+										required
+									/>
+								</div>
+							</div>
+
+							<div className="row justify-content-center no-gutters">
+								<div className="p-1 col-md-auto">
+									<button
+										type="submit"
+										className="btn btn-dark btn-lg"
+										value="LOGIN"
+									>
+										Log In
+									</button>
+								</div>
+
+								<Link to="/register" className="p-1 col-md-auto">
+									<button type="button" className="btn btn-dark btn-lg">
+										REGISTER
+									</button>
+								</Link>
+							</div>
+						</div>
 					</div>
 				</form>
 			</div>

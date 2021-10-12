@@ -3,7 +3,12 @@ import AnimeInfo from '../components/AnimeInfo.js';
 import Create from '../components/Create.js';
 import Register from '../pages/Register';
 import SignIn from '../components/SignIn';
+
 export default function App(props) {
+	let token = window.localStorage.getItem('token');
+	let userId = window.localStorage.getItem('id');
+	let userState = window.localStorage.getItem('userState');
+
 	const [query, updateQuery] = useState({
 		baseURL: 'https://api.jikan.moe/v3',
 		option: '?q=',
@@ -79,65 +84,133 @@ export default function App(props) {
 			console.error(error);
 		}
 	};
+	// return (
+	// 	<div>
+	// 		<SignIn />
+	// 		<div className="AppPage">
+	// 			<div className="searchDiv">
+	// 				<h1 id="animeSearch">Anime アニメ</h1>
+	// 				<form id="searchForm" onSubmit={handleSubmit}>
+	// 					<input
+	// 						id="title"
+	// 						type="text"
+	// 						value={query.title}
+	// 						onChange={handleChange}
+	// 						placeholder="Title"
+	// 					/>
+	// 					<input type="submit" value="Search" />
+	// 				</form>
+	// 			</div>
+	// 			<main className="Page">
+	// 				{Object.keys(anime).length ? <AnimeInfo anime={anime} /> : ''}
+	// 			</main>
+	// 			<Create animes={animes} setAnimes={setAnimes} />
+	// 			<ul id="favesUl">
+	// 				{animes.map(animes => {
+	// 					return (
+	// 						<li id="favesLi" key={animes._id}>
+	// 							<h1 id="favoriteTitle">{animes.title}</h1>
+	// 							<button
+	// 								className="deleteBtn"
+	// 								onClick={() => {
+	// 									handleDelete(animes._id);
+	// 								}}
+	// 							>
+	// 								<img
+	// 									id="trashcan"
+	// 									src="https://cdn.iconscout.com/icon/premium/png-512-thumb/trash-can-1778449-1515973.png"
+	// 								></img>
+	// 							</button>
+	// 						</li>
+	// 					);
+	// 				})}
+	// 			</ul>
+	// 			<ul className="ulTopAnimes">
+	// 				{topAnimes &&
+	// 					topAnimes.map(topAnime => {
+	// 						return (
+	// 							<li className="topAnimeList" key={topAnime.mal_id}>
+	// 								<h3 className="topAnimesTitles">{topAnime.title}</h3>
+	// 								<img
+	// 									id="star"
+	// 									src="https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png"
+	// 								/>
+	// 								{topAnime.score}
+	// 								<br />
+	// 								<img id="topAnimesImages" src={topAnime.image_url} />
+	// 							</li>
+	// 						);
+	// 					})}
+	// 			</ul>
+	// 		</div>
+	// 	</div>
+	// );
 	return (
 		<div>
-			<SignIn />
-			<div className="AppPage">
-				<div className="searchDiv">
-					<h1 id="animeSearch">Anime アニメ</h1>
-					<form id="searchForm" onSubmit={handleSubmit}>
-						<input
-							id="title"
-							type="text"
-							value={query.title}
-							onChange={handleChange}
-							placeholder="Title"
-						/>
-						<input type="submit" value="Search" />
-					</form>
-				</div>
-				<main className="Page">
-					{Object.keys(anime).length ? <AnimeInfo anime={anime} /> : ''}
-				</main>
-				<Create animes={animes} setAnimes={setAnimes} />
-				<ul id="favesUl">
-					{animes.map(animes => {
-						return (
-							<li id="favesLi" key={animes._id}>
-								<h1 id="favoriteTitle">{animes.title}</h1>
-								<button
-									className="deleteBtn"
-									onClick={() => {
-										handleDelete(animes._id);
-									}}
-								>
-									<img
-										id="trashcan"
-										src="https://cdn.iconscout.com/icon/premium/png-512-thumb/trash-can-1778449-1515973.png"
-									></img>
-								</button>
-							</li>
-						);
-					})}
-				</ul>
-				<ul className="ulTopAnimes">
-					{topAnimes &&
-						topAnimes.map(topAnime => {
-							return (
-								<li className="topAnimeList" key={topAnime.mal_id}>
-									<h3 className="topAnimesTitles">{topAnime.title}</h3>
-									<img
-										id="star"
-										src="https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png"
-									/>
-									{topAnime.score}
-									<br />
-									<img id="topAnimesImages" src={topAnime.image_url} />
-								</li>
-							);
-						})}
-				</ul>
-			</div>
+			{!token ? (
+				<>
+					<SignIn />
+				</>
+			) : (
+				<>
+					<div className="AppPage">
+						<div className="searchDiv">
+							<h1 id="animeSearch">Anime アニメ</h1>
+							<form id="searchForm" onSubmit={handleSubmit}>
+								<input
+									id="title"
+									type="text"
+									value={query.title}
+									onChange={handleChange}
+									placeholder="Title"
+								/>
+								<input type="submit" value="Search" />
+							</form>
+						</div>
+						<main className="Page">
+							{Object.keys(anime).length ? <AnimeInfo anime={anime} /> : ''}
+						</main>
+						<Create animes={animes} setAnimes={setAnimes} />
+						<ul id="favesUl">
+							{animes.map(animes => {
+								return (
+									<li id="favesLi" key={animes._id}>
+										<h1 id="favoriteTitle">{animes.title}</h1>
+										<button
+											className="deleteBtn"
+											onClick={() => {
+												handleDelete(animes._id);
+											}}
+										>
+											<img
+												id="trashcan"
+												src="https://cdn.iconscout.com/icon/premium/png-512-thumb/trash-can-1778449-1515973.png"
+											></img>
+										</button>
+									</li>
+								);
+							})}
+						</ul>
+						<ul className="ulTopAnimes">
+							{topAnimes &&
+								topAnimes.map(topAnime => {
+									return (
+										<li className="topAnimeList" key={topAnime.mal_id}>
+											<h3 className="topAnimesTitles">{topAnime.title}</h3>
+											<img
+												id="star"
+												src="https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png"
+											/>
+											{topAnime.score}
+											<br />
+											<img id="topAnimesImages" src={topAnime.image_url} />
+										</li>
+									);
+								})}
+						</ul>
+					</div>
+				</>
+			)}
 		</div>
 	);
 }
