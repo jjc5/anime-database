@@ -5,11 +5,27 @@ const AnimeInfo = props => {
 	}, []);
 	return (
 		<div>
-			<div className="searchedAnime">
-				<h1 id="searchedTitle">{props.anime.results[0].title}</h1>
-				<h1 id="searchedScore">{props.anime.results[0].score}</h1>
-				<img src={props.anime.results[0].image_url} />
-				<p className="synopsis">{props.anime.results[0].synopsis}</p>
+			<div className="container-fluid">
+				<div className="row">
+					<div className="col-sm-12 col-md-4">
+						<img src={props.anime.results[0].image_url} />
+					</div>
+				</div>
+				<div className="row">
+					<div className="col-sm-12 col-md-8">
+						<h1 id="searchedTitle">{props.anime.results[0].title}</h1>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col-sm-12 col-md-8">
+						<h1 id="searchedScore">{props.anime.results[0].score}</h1>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col-sm-12 col-md-8">
+						<p className="synopsis">{props.anime.results[0].synopsis}</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

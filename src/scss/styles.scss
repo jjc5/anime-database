@@ -3,10 +3,30 @@
 @import "grid";
 
 body {
+  font-family: 'Montserrat', sans-serif !important;
   background: #141414 !important;
   // background-image: url('https://wallpaperaccess.com/full/4131921.jpg');
   color: #ffffff !important;
 }
+body::-webkit-scrollbar {
+  width: 1em !important;
+}
+.logBtn{
+  color: white !important;
+  background: transparent !important;
+}
+form > input#title{
+  background: transparent !important;
+  color: pink !important;
+}
+input#title::placeholder{
+  color: white !important;
+}
+form > input.searchBtn{
+  background: transparent !important;
+  color: black !important;
+}
+
 .signIn-form{
   // background: grey !important;
 }
@@ -14,6 +34,9 @@ body {
 .animeRow{
   overflow-x: auto !important;
   flex-wrap: nowrap !important;
+.animeRow::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+  border-radius: 10px !important;
 }
 .image-container {
 	position: relative;
@@ -38,4 +61,9 @@ body {
 	font-size: 20px;
 	padding: 20px;
 	text-align: center;
+}
+@media only screen and (max-width: 426px) {
+  .display-3{
+    font-size: 40px !important;
+  }
 }

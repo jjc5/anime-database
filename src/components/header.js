@@ -35,7 +35,7 @@ const Header = props => {
 						<p className="p-1">
 							Hello {window.localStorage.getItem('loggedInUserName')}
 						</p>
-						<button className="btn btn-light" onClick={handleLogout}>
+						<button className="btn btn-light logBtn" onClick={handleLogout}>
 							Logout
 						</button>
 					</div>

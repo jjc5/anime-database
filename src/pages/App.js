@@ -119,7 +119,7 @@ export default function App(props) {
 				<>
 					<div className="AppPage">
 						<div className="container-fluid">
-							<div className="row d-flex align-items-center mt-4 mb-4">
+							<div className="row d-flex align-items-center mt-4 mb-4 justify-content-center">
 								<form id="searchForm" onSubmit={handleSubmit}>
 									<input
 										id="title"
@@ -128,7 +128,7 @@ export default function App(props) {
 										onChange={handleChange}
 										placeholder="Title"
 									/>
-									<input type="submit" value="Search" />
+									<input className="searchBtn" type="submit" value="Search" />
 								</form>
 							</div>
 							<main className="Page">
