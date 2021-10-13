@@ -62,13 +62,12 @@ const SignIn = props => {
 
 						<div className="container">
 							<div className="row  p-2 justify-content-center">
-								<div className="col-md-auto">
-									<i className="fa fa-user icon"></i>
+								<div className="col-md-auto signInInput">
 									<input
 										className="p-1  input-field"
 										id="email"
 										type="text"
-										placeholder="User Email"
+										placeholder="Email"
 										name="email"
 										value={signin.email}
 										onChange={handleChange}
@@ -78,9 +77,7 @@ const SignIn = props => {
 							</div>
 
 							<div className="row  p-2 justify-content-center">
-								<div className="col-md-auto">
-									<i className="fa fa-key icon"></i>
-
+								<div className="col-md-auto signInInput">
 									<input
 										className="p-1 input-field"
 										id="password"

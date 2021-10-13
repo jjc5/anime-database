@@ -76,7 +76,7 @@ const RegisterInfo = props => {
 
 	return (
 		<>
-			<div className="container">
+			<div className="container registerContainer">
 				<h3 className="row justify-content-center">Register your account</h3>
 				<form
 					onSubmit={handleSubmit}
@@ -84,7 +84,7 @@ const RegisterInfo = props => {
 					id="registerForm"
 					style={bgStyle1}
 				>
-					<div className="col-md-auto">
+					<div className="col-md-auto justify-content-center">
 						<div className="p-1">
 							<i className="fa fa-wpforms icon"></i>
 							<input
@@ -137,6 +137,7 @@ const RegisterInfo = props => {
 				</form>
 				<div className="row justify-content-center" style={bgStyle}>
 					<button
+						id="submitBtn"
 						type="submit"
 						className="p-2 m-3 btn-lg btn btn-light"
 						value="SUBMIT"

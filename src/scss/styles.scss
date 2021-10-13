@@ -6,13 +6,13 @@ body {
   font-family: 'Montserrat', sans-serif !important;
   background: #141414 !important;
   // background-image: url('https://wallpaperaccess.com/full/4131921.jpg');
-  color: #ffffff !important;
+  color: pink !important;
 }
 body::-webkit-scrollbar {
   width: 1em !important;
 }
 .logBtn{
-  color: white !important;
+  color: pink !important;
   background: transparent !important;
 }
 form > input#title{
@@ -20,13 +20,49 @@ form > input#title{
   color: pink !important;
 }
 input#title::placeholder{
-  color: white !important;
+  color: pink !important;
 }
 form > input.searchBtn{
   background: transparent !important;
-  color: black !important;
+  color: pink !important;
 }
-
+.input-field{
+  margin-bottom: 10px !important;
+}
+.input-field::placeholder{
+  color: pink !important;
+}
+input#email{
+  color: white !important;
+  background: transparent !important;
+  border-radius: 5px !important;
+}
+input#password{
+  color: white !important;
+  background: transparent !important;
+  border-radius: 5px !important;
+}
+input#name{
+  margin-top: 10px;
+  color: white !important;
+  background: transparent !important;
+  border-radius: 5px !important;
+}
+input#cpassword{
+  color: white !important;
+  background: transparent !important;
+  border-radius: 5px !important;
+}
+.registerContainer{
+  margin-top: 50px;
+}
+#registerForm{
+  height: 25vh !important;
+}
+#submitBtn{
+  background: transparent !important;
+  color: white !important;
+}
 .signIn-form{
   // background: grey !important;
 }
@@ -34,6 +70,7 @@ form > input.searchBtn{
 .animeRow{
   overflow-x: auto !important;
   flex-wrap: nowrap !important;
+}
 .animeRow::-webkit-scrollbar-track{
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
   border-radius: 10px !important;

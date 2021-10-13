@@ -25,7 +25,7 @@ const Header = props => {
 	return (
 		<div id="header" className="navbar navbar-dark bg-dark">
 			<div id="header" className="mr-auto p-2">
-				<div className="display-3">Anime Database</div>
+				<div className="display-3">Anime Database アニメ</div>
 			</div>
 			{!window.localStorage.getItem('token') ? (
 				<> </>
