@@ -10,6 +10,18 @@ const jwt = require('jsonwebtoken');
  * @desc    Get all users
  * @access  Private
  */
+ router.get('/', async (req, res) => {
+   try{
+     const foundUsers = await User.find({})
+     res.status(200).json(foundUsers)
+   }catch(error){
+     console.error(error)
+     res.status(400).json({message: error.message})
+   }
+  });
+
+ //@route POST api/users/register
+//@desc Register a new user
 router.post('/register', (req, res) => {
  const {name, email, password} = req.body;
 
@@ -57,5 +69,16 @@ router.post('/register', (req, res) => {
         })
       })
   });
+
+  //UPDATE
+  router.put('/:id', async (req, res) => {
+    try{
+      const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true })
+      res.status(200).json(updatedUser)
+    }catch(error){
+      console.error(error);
+      res.status(400).json({ message: error.message })
+    }
+  })
 
  module.exports = router;

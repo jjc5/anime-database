@@ -32,6 +32,7 @@ const SignIn = props => {
 			}
 			window.localStorage.setItem('token', data.token);
 			window.localStorage.setItem('loggedInUser', data.user.email);
+			window.localStorage.setItem('loggedInUserName', data.user.name);
 			window.localStorage.setItem('id', data.user.id);
 			window.localStorage.setItem('userState', data.user.state);
 		} catch (error) {
@@ -49,8 +50,11 @@ const SignIn = props => {
 
 	return (
 		<div className="d-flex p-5 justify-content-center">
-			<div className="card container signIn-form d-flex p-5 justify-content-center">
-				<form onSubmit={handleLogin} className="row">
+			<div className="card container signIn-form d-flex p-5 justify-content-center bg-dark ">
+				<form
+					onSubmit={handleLogin}
+					className="row text-center justify-content-center"
+				>
 					<div className="row p-2 justify-content-center">
 						<h2 className="text-center col-md-5 reg-card-title">
 							Sign in to your account
